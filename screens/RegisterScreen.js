@@ -175,15 +175,17 @@ const styles = StyleSheet.create({
   },
   regbutton:{
     backgroundColor:"#8ABCE8",
-    borderRadius: 20,
-    height:50,
+    height:40,
     marginTop: 20,
-    alignItems:'center',
+    marginHorizontal: 20,
+    alignItems: "center",
+    justifyContent: "center",
+    borderRadius: 15,
+    elevation: 3,
   },
   regbtnlbl: {
-    fontSize:30,
+    fontSize:14,
     alignItem:'center',
-    marginTop: 5,
     fontWeight:'600',
   },
 });
