@@ -1,4 +1,4 @@
-import { StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, Text, TextInput, TouchableOpacity, View, Image } from 'react-native';
 import React from 'react';
 import Svg, { Path } from 'react-native-svg';
 
@@ -21,6 +21,10 @@ export default function LoginScreen({navigation}){
             </TouchableOpacity>
       </View>
 
+      <Image
+          style={styles.catlogo}
+          source={require('../assets/catpurrfecthomelogo.png')}
+      />
 
       <View style={styles.whitebox}>
         <View style={styles.loginlabel}>
@@ -32,7 +36,7 @@ export default function LoginScreen({navigation}){
             <Svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <Path 
                 d="M4 7L10.94 11.3375C11.5885 11.7428 12.4115 11.7428 13.06 11.3375L20 7M5 18H19C20.1046 18 21 17.1046 21 16V8C21 6.89543 20.1046 6 19 6H5C3.89543 6 3 6.89543 3 8V16C3 17.1046 3.89543 18 5 18Z" 
-                stroke="#004B0A" 
+                stroke="black" 
                 strokeWidth="2" 
                 strokeLinecap="round" 
                 strokeLinejoin="round"
@@ -47,7 +51,7 @@ export default function LoginScreen({navigation}){
             <Svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
               <Path 
                 d="M7 10.0288C7.47142 10 8.05259 10 8.8 10H15.2C15.9474 10 16.5286 10 17 10.0288M7 10.0288C6.41168 10.0647 5.99429 10.1455 5.63803 10.327C5.07354 10.6146 4.6146 11.0735 4.32698 11.638C4 12.2798 4 13.1198 4 14.8V16.2C4 17.8802 4 18.7202 4.32698 19.362C4.6146 19.9265 5.07354 20.3854 5.63803 20.673C6.27976 21 7.11984 21 8.8 21H15.2C16.8802 21 17.7202 21 18.362 20.673C18.9265 20.3854 19.3854 19.9265 19.673 19.362C20 18.7202 20 17.8802 20 16.2V14.8C20 13.1198 20 12.2798 19.673 11.638C19.3854 11.0735 18.9265 10.6146 18.362 10.327C18.0057 10.1455 17.5883 10.0647 17 10.0288M7 10.0288V8C7 5.23858 9.23858 3 12 3C14.7614 3 17 5.23858 17 8V10.0288" 
-                stroke="#004B0A" 
+                stroke="black" 
                 strokeWidth="2" 
                 strokeLinecap="round" 
                 strokeLinejoin="round"
@@ -55,7 +59,16 @@ export default function LoginScreen({navigation}){
               />
             </Svg>
           </View>
+
           <TextInput style={styles.passwordLabel} placeholder='Password'/>
+
+          <View style={styles.svgeye}>
+              <Svg xmlns="http://www.w3.org/2000/svg" height="20px" viewBox="0 -960 960 960" width="20px" fill="#1E1E1E">
+              <Path 
+                d="M480-320q75 0 127.5-52.5T660-500q0-75-52.5-127.5T480-680q-75 0-127.5 52.5T300-500q0 75 52.5 127.5T480-320Zm0-72q-45 0-76.5-31.5T372-500q0-45 31.5-76.5T480-608q45 0 76.5 31.5T588-500q0 45-31.5 76.5T480-392Zm0 192q-146 0-266-81.5T40-500q54-137 174-218.5T480-800q146 0 266 81.5T920-500q-54 137-174 218.5T480-200Zm0-300Zm0 220q113 0 207.5-59.5T832-500q-50-101-144.5-160.5T480-720q-113 0-207.5 59.5T128-500q50 101 144.5 160.5T480-280Z"/>
+              </Svg>
+          </View>
+
         </View>
         
         <Text style={styles.forgotpass}>Forgot password?</Text>
@@ -72,8 +85,15 @@ export default function LoginScreen({navigation}){
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#8ABCE8",
+    backgroundColor: "#6588E6",
     justifyContent: 'center', 
+  },
+  catlogo: {
+    width: 200,
+    height: 200,
+    marginTop: -150,
+    marginBottom: -40,
+    alignSelf: 'center'
   },
   whitebox: {
     backgroundColor: "white",
@@ -82,6 +102,7 @@ const styles = StyleSheet.create({
     padding: 20,
     elevation: 4,
     height: 380,
+    marginBottom: -90
   },
   svgarrow: {
     position: 'absolute',
@@ -93,7 +114,9 @@ const styles = StyleSheet.create({
   },
   logintext: {
     fontSize: 45,
-    color: "#004B0A",
+    color: "black",
+    marginTop: -5,
+    fontFamily: 'Inter_800ExtraBold'
   },
   svgemail: {
     justifyContent: 'center',
@@ -105,10 +128,10 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     flexDirection: "row",
     borderRadius: 20,
-    borderColor: "#004B0A",
+    borderColor: "black",
     borderWidth: 2,
     marginTop: 20,
-    marginBottom: 5,
+    marginBottom: 0,
     elevation: 5,
     alignItems: 'center', 
   },
@@ -116,13 +139,14 @@ const styles = StyleSheet.create({
     flex: 1,
     marginLeft: 10,
     fontSize: 14,
+    fontFamily: 'Inter_500Medium'
   },
   passwordContainer: {
     height: 45,
     backgroundColor: "white",
     flexDirection: "row",
     borderRadius: 20,
-    borderColor: "#004B0A",
+    borderColor: "black",
     borderWidth: 2,
     marginTop: 20,
     elevation: 5,
@@ -137,6 +161,12 @@ const styles = StyleSheet.create({
     flex: 1,
     marginLeft: 10,
     fontSize: 14,
+    fontFamily: 'Inter_500Medium'
+  },
+  svgeye: {
+    justifyContent: 'right',
+    marginRight: 10,
+    alignItems: 'center'
   },
   forgotpass: {
     fontSize: 12,
@@ -144,20 +174,23 @@ const styles = StyleSheet.create({
     textAlign: "right",
     marginRight: 8,
     color: "#919191",
+    fontFamily: 'Inter_500Medium'
   },
   loginbutton: {
-    backgroundColor: "#ACD29F",
-    marginHorizontal: 20,
+    backgroundColor: "#6588E6",
+    marginHorizontal: 15,
     alignItems: "center",
     justifyContent: "center",
-    height: 40,
+    height: 45,
     marginTop: 40,
     borderRadius: 15,
     elevation: 3,
   },
   loginbuttontext: {
-    fontSize: 14,
-    color: "black",
+    fontSize: 16,
+    color: "white",
     textAlign: "center",
+    width: 200,
+    fontFamily: 'Inter_600SemiBold'
   },
 });
